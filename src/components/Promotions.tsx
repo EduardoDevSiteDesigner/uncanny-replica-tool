@@ -2,30 +2,37 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Gift, Sparkles } from "lucide-react";
-import promoBandana from "@/assets/promo-bandana.png";
+import { Sparkles } from "lucide-react";
+import promo10Bandanas from "@/assets/promo-10-bandanas.png";
+import promo40Bandanas from "@/assets/promo-40-bandanas.png";
+import promo70Bandanas from "@/assets/promo-70-bandanas.png";
+import promo50Abadas from "@/assets/promo-50-abadas.png";
 
 const promos = [
   {
     quantity: 100,
-    reward: "10 bandanas",
+    reward: "10 BANDANAS",
     highlight: false,
+    image: promo10Bandanas,
   },
   {
     quantity: 300,
-    reward: "40 bandanas",
+    reward: "40 BANDANAS",
     highlight: false,
+    image: promo40Bandanas,
   },
   {
     quantity: 500,
-    reward: "70 bandanas",
+    reward: "70 BANDANAS",
     highlight: true,
+    image: promo70Bandanas,
   },
   {
     quantity: 1000,
-    reward: "+50 abadás",
+    reward: "+50 ABADÁS",
     highlight: true,
     special: true,
+    image: promo50Abadas,
   },
 ];
 
@@ -50,9 +57,9 @@ const Promotions = () => {
         >
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-2 mb-4">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-bold">Promoção Exclusiva Carnaval 2026</span>
+            <span className="text-sm font-bold uppercase">Promoção Exclusiva Carnaval 2026</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 uppercase">
             Compre mais,{" "}
             <span className="text-gradient">ganhe mais!</span>
           </h2>
@@ -83,7 +90,7 @@ const Promotions = () => {
                 {promo.special && (
                   <div className="absolute top-0 left-0 right-0 bg-foreground/20 py-1 text-center">
                     <span className="text-xs font-bold text-accent-foreground uppercase">
-                      Melhor Oferta
+                      MELHOR OFERTA
                     </span>
                   </div>
                 )}
@@ -91,7 +98,7 @@ const Promotions = () => {
                 {/* Image */}
                 <div className="relative pt-8 px-6">
                   <img
-                    src={promoBandana}
+                    src={promo.image}
                     alt="Promoção"
                     className="w-full h-32 object-contain group-hover:scale-110 transition-transform duration-300"
                   />
@@ -100,33 +107,32 @@ const Promotions = () => {
                 {/* Content */}
                 <div className={`p-6 text-center ${promo.special || promo.highlight ? "text-primary-foreground" : ""}`}>
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <Gift className={`w-5 h-5 ${promo.special || promo.highlight ? "text-primary-foreground" : "text-accent"}`} />
-                    <span className={`font-bold ${promo.special || promo.highlight ? "text-primary-foreground" : "text-accent"}`}>
+                    <span className={`font-bold uppercase ${promo.special || promo.highlight ? "text-primary-foreground" : "text-accent"}`}>
                       GANHE {promo.reward}
                     </span>
                   </div>
-                  <p className={`text-sm ${promo.special || promo.highlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  <p className={`text-sm uppercase ${promo.special || promo.highlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     Comprando {promo.quantity}+ abadás
                   </p>
 
                   <Button
                     variant={promo.special || promo.highlight ? "secondary" : "cta"}
                     size="sm"
-                    className="w-full mt-4 font-bold"
+                    className="w-full mt-4 font-bold uppercase"
                     asChild
                   >
                     <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
-                      Aproveitar
+                      APROVEITAR
                     </a>
                   </Button>
                 </div>
 
                 {/* Limited time badge */}
                 <div className={`absolute top-4 right-4 ${promo.special ? "hidden" : ""}`}>
-                  <span className={`text-[10px] font-bold px-2 py-1 rounded-full ${
+                  <span className={`text-[10px] font-bold px-2 py-1 rounded-full uppercase ${
                     promo.highlight ? "bg-white/20 text-primary-foreground" : "bg-accent/10 text-accent"
                   }`}>
-                    Limitado
+                    LIMITADO
                   </span>
                 </div>
               </div>

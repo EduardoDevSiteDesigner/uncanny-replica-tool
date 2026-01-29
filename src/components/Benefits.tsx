@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CheckCircle2, Clock, Palette, CreditCard, Truck, Shield } from "lucide-react";
+import { CheckCircle2, Clock, Palette, CreditCard, Truck } from "lucide-react";
 
 const benefits = [
   {
@@ -13,7 +13,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Entrega Rápida",
-    description: "Prazo de 7 a 15 dias úteis. O mais rápido do mercado!",
+    description: "A partir de 15 dias úteis ou peça sua antecipação!",
     color: "from-carnival-teal to-secondary",
   },
   {
@@ -33,12 +33,6 @@ const benefits = [
     title: "Frete Brasil",
     description: "Enviamos para todo o país com rastreamento completo.",
     color: "from-carnival-green to-carnival-teal",
-  },
-  {
-    icon: Shield,
-    title: "Garantia Total",
-    description: "Qualidade garantida ou seu dinheiro de volta. Sem burocracia!",
-    color: "from-primary to-carnival-pink",
   },
 ];
 
