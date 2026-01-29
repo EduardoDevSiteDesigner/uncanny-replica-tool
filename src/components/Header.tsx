@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoArteArena from "@/assets/logo-arte-arena.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,28 +38,14 @@ const Header = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="flex items-center gap-2"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <svg
-                  viewBox="0 0 40 40"
-                  className="w-6 h-6 text-primary"
-                  fill="currentColor"
-                >
-                  <path d="M20 5L5 15v20h30V15L20 5zm0 5l10 7v13H10V17l10-7z" />
-                </svg>
-              </div>
-              <div className="ml-2">
-                <span className="text-primary-foreground font-bold text-lg leading-none block">
-                  arte
-                </span>
-                <span className="text-primary-foreground font-bold text-lg leading-none block">
-                  arena
-                </span>
-              </div>
-            </div>
+            <img
+              src={logoArteArena}
+              alt="Arte Arena"
+              className="h-12 w-auto"
+            />
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -88,10 +75,10 @@ const Header = () => {
               <Button
                 variant="cta"
                 size="lg"
-                className="font-bold shadow-glow-accent"
+                className="font-bold"
                 asChild
               >
-                <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Fale Conosco
                 </a>
@@ -99,7 +86,7 @@ const Header = () => {
             </motion.div>
             <div className="flex items-center gap-3 text-primary-foreground">
               <a
-                href="https://wa.me/5511934881548"
+                href="https://wa.me/5511958339942"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -107,7 +94,7 @@ const Header = () => {
                 <Phone className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com/artearena"
+                href="https://www.instagram.com/arte_arena/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -148,7 +135,7 @@ const Header = () => {
                 ))}
                 <div className="px-4 pt-4 border-t border-primary-foreground/20 mt-2">
                   <Button variant="cta" className="w-full" asChild>
-                    <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Fale Conosco
                     </a>

@@ -153,7 +153,7 @@ const Products = () => {
                 className="w-full text-lg font-bold py-6 animate-pulse-glow"
                 asChild
               >
-                <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                   Solicitar Orçamento Agora
                 </a>
               </Button>
