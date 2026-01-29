@@ -7,8 +7,8 @@ import carnivalBadge from "@/assets/carnaval-2026-badge.png";
 const Hero = () => {
   const stats = [
     { icon: Users, value: "10.000+", label: "Clientes satisfeitos" },
-    { icon: Star, value: "4.9", label: "Avaliação média" },
-    { icon: Clock, value: "7 dias", label: "Prazo de entrega" },
+    { icon: Star, value: "5.0", label: "Avaliação média" },
+    { icon: Clock, value: "15+ dias", label: "Prazo de entrega" },
   ];
 
   return (
@@ -83,7 +83,7 @@ const Hero = () => {
                 className="text-lg font-bold px-8 py-6 animate-pulse-glow group"
                 asChild
               >
-                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20para%20abadás%20de%20Carnaval%202026." target="_blank" rel="noopener noreferrer">
                   Fazer Orçamento Grátis
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>

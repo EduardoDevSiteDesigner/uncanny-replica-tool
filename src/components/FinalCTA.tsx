@@ -50,7 +50,7 @@ const FinalCTA = () => {
                 className="text-lg font-bold px-8 py-6 animate-pulse-glow group"
                 asChild
               >
-                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942?text=Olá!%20Quero%20fazer%20um%20orçamento%20grátis%20para%20meu%20bloco%20de%20Carnaval." target="_blank" rel="noopener noreferrer">
                   Fazer Orçamento Grátis
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -75,9 +75,9 @@ const FinalCTA = () => {
             <motion.img
               src={abadasCollection}
               alt="Coleção de Abadás"
-              className="w-full max-w-md mx-auto drop-shadow-2xl"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="w-full max-w-lg mx-auto drop-shadow-2xl"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
         </div>

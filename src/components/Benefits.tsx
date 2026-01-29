@@ -1,9 +1,24 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CheckCircle2, Clock, Palette, CreditCard, Truck } from "lucide-react";
+import { CheckCircle2, Clock, Palette, Truck } from "lucide-react";
 
-const benefits = [
+const benefitsLeft = [
+  {
+    icon: Palette,
+    title: "Esboço Grátis",
+    description: "Nossa equipe cria sua arte sem custo adicional. 3 alterações incluídas!",
+    color: "from-carnival-pink to-carnival-magenta",
+  },
+  {
+    icon: Truck,
+    title: "Frete Brasil",
+    description: "Enviamos para todo o país com rastreamento completo.",
+    color: "from-carnival-green to-carnival-teal",
+  },
+];
+
+const benefitsRight = [
   {
     icon: CheckCircle2,
     title: "Qualidade Premium",
@@ -15,24 +30,6 @@ const benefits = [
     title: "Entrega Rápida",
     description: "A partir de 15 dias úteis ou peça sua antecipação!",
     color: "from-carnival-teal to-secondary",
-  },
-  {
-    icon: Palette,
-    title: "Esboço Grátis",
-    description: "Nossa equipe cria sua arte sem custo adicional. 3 alterações incluídas!",
-    color: "from-carnival-pink to-carnival-magenta",
-  },
-  {
-    icon: CreditCard,
-    title: "Parcelamento",
-    description: "Pague em até 12x no cartão. PIX, boleto e transferência.",
-    color: "from-accent to-carnival-yellow",
-  },
-  {
-    icon: Truck,
-    title: "Frete Brasil",
-    description: "Enviamos para todo o país com rastreamento completo.",
-    color: "from-carnival-green to-carnival-teal",
   },
 ];
 
@@ -62,19 +59,44 @@ const Benefits = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Left side - Esboço Grátis & Frete Brasil */}
+          {benefitsLeft.map((benefit, index) => (
             <motion.div
-              key={index}
+              key={`left-${index}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
               <div className="relative bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover-lift h-full">
-                {/* Gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
-                
+                <div className="relative z-10">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <benefit.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+          
+          {/* Right side - Qualidade Premium & Entrega Rápida */}
+          {benefitsRight.map((benefit, index) => (
+            <motion.div
+              key={`right-${index}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: (index + 2) * 0.1 }}
+              className="group"
+            >
+              <div className="relative bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover-lift h-full">
+                <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
                 <div className="relative z-10">
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <benefit.icon className="w-7 h-7 text-white" />

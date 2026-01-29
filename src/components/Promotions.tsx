@@ -14,18 +14,21 @@ const promos = [
     reward: "10 BANDANAS",
     highlight: false,
     image: promo10Bandanas,
+    whatsappMsg: "Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20promoção%20de%2010%20bandanas%20grátis%20comprando%20100%20abadás.",
   },
   {
     quantity: 300,
     reward: "40 BANDANAS",
     highlight: false,
     image: promo40Bandanas,
+    whatsappMsg: "Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20promoção%20de%2040%20bandanas%20grátis%20comprando%20300%20abadás.",
   },
   {
     quantity: 500,
     reward: "70 BANDANAS",
     highlight: true,
     image: promo70Bandanas,
+    whatsappMsg: "Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20promoção%20de%2070%20bandanas%20grátis%20comprando%20500%20abadás.",
   },
   {
     quantity: 1000,
@@ -33,6 +36,7 @@ const promos = [
     highlight: true,
     special: true,
     image: promo50Abadas,
+    whatsappMsg: "Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20promoção%20de%2050%20abadás%20grátis%20comprando%201000%20abadás.",
   },
 ];
 
@@ -121,7 +125,7 @@ const Promotions = () => {
                     className="w-full mt-4 font-bold uppercase"
                     asChild
                   >
-                    <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/5511958339942?text=${promo.whatsappMsg}`} target="_blank" rel="noopener noreferrer">
                       APROVEITAR
                     </a>
                   </Button>

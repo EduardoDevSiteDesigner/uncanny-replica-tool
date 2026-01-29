@@ -43,9 +43,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-background/70 max-w-md">
-              Empresa líder em produtos personalizados no Brasil. 
-              Há mais de 10 anos transformando ideias em realidade para blocos, 
-              empresas e eventos.
+              Empresa líder em produtos personalizados no Brasil transformando ideias em realidade para blocos, empresas e eventos.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
@@ -137,7 +135,7 @@ const Footer = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/5511958339942"
+        href="https://wa.me/5511958339942?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20abadás."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-carnival-green rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 animate-bounce-subtle"

@@ -35,7 +35,11 @@ const products = [
 ];
 
 const specs = [
-  { label: "Material", value: "Poliéster Esportivo Dryfit" },
+  { 
+    label: "Material", 
+    value: "Helanca - 100% sintética",
+    details: ["Alta elasticidade", "Durabilidade", "Conforto", "Extremamente versátil"]
+  },
   { label: "Gênero", value: "Unissex" },
   { label: "Personalização", value: "Sublimação 100% frente e verso" },
   { label: "Cores", value: "Ilimitadas" },
@@ -160,9 +164,21 @@ const Products = () => {
               </h4>
               <div className="space-y-3">
                 {specs.map((spec, index) => (
-                  <div key={index} className="flex justify-between items-center">
-                    <span className="text-primary-foreground/70">{spec.label}</span>
-                    <span className="text-primary-foreground font-medium">{spec.value}</span>
+                  <div key={index} className="flex flex-col">
+                    <div className="flex justify-between items-center">
+                      <span className="text-primary-foreground/70">{spec.label}</span>
+                      <span className="text-primary-foreground font-medium">{spec.value}</span>
+                    </div>
+                    {spec.details && (
+                      <ul className="mt-2 ml-4 space-y-1">
+                        {spec.details.map((detail, idx) => (
+                          <li key={idx} className="text-primary-foreground/60 text-sm flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
@@ -204,7 +220,7 @@ const Products = () => {
               className="text-lg font-bold py-6 px-12 w-full max-w-md animate-pulse-glow"
               asChild
             >
-              <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5511958339942?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20abadás%20personalizados." target="_blank" rel="noopener noreferrer">
                 Solicitar Orçamento Agora
               </a>
             </Button>

@@ -94,7 +94,7 @@ const WhatsAppCTA = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/5511958339942"
+                    href="https://wa.me/5511958339942?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
