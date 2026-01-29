@@ -83,7 +83,7 @@ const WhatsAppCTA = () => {
                     Clique para conversar
                   </p>
                   <p className="text-3xl md:text-4xl font-bold text-primary-foreground">
-                    (11) 93488-1548
+                    (11) 95833-9942
                   </p>
                 </div>
 
@@ -94,7 +94,7 @@ const WhatsAppCTA = () => {
                   asChild
                 >
                   <a
-                    href="https://wa.me/5511934881548"
+                    href="https://wa.me/5511958339942"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

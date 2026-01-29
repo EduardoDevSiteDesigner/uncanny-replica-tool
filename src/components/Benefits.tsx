@@ -64,8 +64,7 @@ const Benefits = () => {
             <span className="text-gradient">Arte Arena?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Somos referência em produtos personalizados há mais de 10 anos.
-            Conheça nossos diferenciais.
+            Somos referência em produtos personalizados e já distribuímos mais de 40 mil produtos para todo o Brasil
           </p>
         </motion.div>
 

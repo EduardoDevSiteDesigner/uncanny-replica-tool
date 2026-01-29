@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com/artearena", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Youtube, href: "#", label: "Youtube" },
+    { icon: Instagram, href: "https://www.instagram.com/arte_arena/", label: "Instagram" },
+    { icon: Facebook, href: "https://www.instagram.com/arte_arena/", label: "Facebook" },
+    { icon: Youtube, href: "https://www.instagram.com/arte_arena/", label: "Youtube" },
   ];
 
   const quickLinks = [
@@ -88,7 +88,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-background">(11) 93488-1548</p>
+                  <p className="text-background">(11) 95833-9942</p>
                   <p className="text-background/60 text-sm">WhatsApp</p>
                 </div>
               </li>
@@ -137,7 +137,7 @@ const Footer = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/5511934881548"
+        href="https://wa.me/5511958339942"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-carnival-green rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 animate-bounce-subtle"

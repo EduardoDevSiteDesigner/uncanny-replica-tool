@@ -115,7 +115,7 @@ const Promotions = () => {
                     className="w-full mt-4 font-bold"
                     asChild
                   >
-                    <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                       Aproveitar
                     </a>
                   </Button>

@@ -50,7 +50,7 @@ const FinalCTA = () => {
                 className="text-lg font-bold px-8 py-6 animate-pulse-glow group"
                 asChild
               >
-                <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                   Fazer Orçamento Grátis
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Users, Clock, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-carnival.jpg";
-import carnivalBadge from "@/assets/carnival-badge.png";
+import carnivalBadge from "@/assets/carnaval-2026-badge.png";
 
 const Hero = () => {
   const stats = [
@@ -83,7 +83,7 @@ const Hero = () => {
                 className="text-lg font-bold px-8 py-6 animate-pulse-glow group"
                 asChild
               >
-                <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
                   Fazer Orçamento Grátis
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -91,7 +91,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-lg font-semibold px-8 py-6 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="text-lg font-semibold px-8 py-6 border-primary-foreground/30 text-accent hover:bg-primary-foreground/10 hover:text-accent"
                 asChild
               >
                 <a href="#produtos">Ver Produtos</a>
@@ -110,7 +110,7 @@ const Hero = () => {
                   key={index}
                   className="glass rounded-xl p-4 text-center"
                 >
-                  <stat.icon className="w-5 h-5 text-accent mx-auto mb-2" />
+                  <stat.icon className="w-5 h-5 text-primary-foreground mx-auto mb-2" />
                   <p className="text-2xl font-bold text-primary-foreground">
                     {stat.value}
                   </p>
