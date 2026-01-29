@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MessageSquare, FileText, Palette, CheckCircle, Truck } from "lucide-react";
+import { MessageSquare, FileText, Palette, CheckCircle, Truck, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -59,28 +59,20 @@ const HowItWorks = () => {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connection line - Desktop */}
-          <div className="hidden lg:block absolute top-[60px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-primary via-carnival-pink to-accent rounded-full" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-2">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative"
+                className="relative flex items-center"
               >
-                <div className="flex flex-col items-center text-center">
-                  {/* Step number */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-background text-xs font-bold text-muted-foreground px-2 py-1 rounded-full border border-border z-10">
-                    {index + 1}
-                  </div>
-
+                <div className="flex flex-col items-center text-center flex-1">
                   {/* Icon */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 shadow-lg relative z-20`}
+                    className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 shadow-lg`}
                   >
                     <step.icon className="w-10 h-10 text-white" />
                   </motion.div>
@@ -90,18 +82,17 @@ const HowItWorks = () => {
                   <p className="text-muted-foreground text-sm">{step.description}</p>
                 </div>
 
+                {/* Arrow - Desktop */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:flex items-center justify-center px-2">
+                    <ArrowRight className="w-6 h-6 text-primary" />
+                  </div>
+                )}
+
                 {/* Arrow - Mobile/Tablet */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-4">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-6 h-6 text-muted-foreground/50 rotate-90 lg:rotate-0"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                  <div className="lg:hidden flex justify-center my-4 w-full absolute -bottom-8 left-0">
+                    <ArrowRight className="w-6 h-6 text-primary rotate-90" />
                   </div>
                 )}
               </motion.div>

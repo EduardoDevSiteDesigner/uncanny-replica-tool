@@ -79,13 +79,13 @@ const Products = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-4xl mx-auto">
           {/* Product Selector */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 mb-8"
           >
             {products.map((product) => (
               <div
@@ -144,42 +144,15 @@ const Products = () => {
                 )}
               </div>
             ))}
-
-            {/* CTA */}
-            <div className="pt-4">
-              <Button
-                variant="cta"
-                size="lg"
-                className="w-full text-lg font-bold py-6 animate-pulse-glow"
-                asChild
-              >
-                <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
-                  Solicitar Orçamento Agora
-                </a>
-              </Button>
-            </div>
           </motion.div>
 
-          {/* Product Details */}
+          {/* Specs and Sizes */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
+            className="grid md:grid-cols-2 gap-6 mb-8"
           >
-            {/* Selected Product Image */}
-            <div className="relative aspect-square max-w-md mx-auto">
-              <motion.img
-                key={selectedProduct.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-                src={selectedProduct.image}
-                alt={selectedProduct.name}
-                className="w-full h-full object-contain drop-shadow-2xl"
-              />
-            </div>
-
             {/* Specs */}
             <div className="glass rounded-2xl p-6">
               <h4 className="text-lg font-bold text-primary-foreground mb-4">
@@ -222,6 +195,20 @@ const Products = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* CTA */}
+          <div className="flex justify-center">
+            <Button
+              variant="cta"
+              size="lg"
+              className="text-lg font-bold py-6 px-12 w-full max-w-md animate-pulse-glow"
+              asChild
+            >
+              <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer">
+                Solicitar Orçamento Agora
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
