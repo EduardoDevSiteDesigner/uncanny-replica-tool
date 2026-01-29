@@ -1,65 +1,117 @@
-import { useState } from "react";
-import { Menu, X, Phone, Instagram } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { label: "Promoção de Carnaval", href: "#promocoes" },
-    { label: "Como funciona?", href: "#como-funciona" },
-    { label: "Sobre Nós?", href: "#sobre" },
+    { label: "Promoções", href: "#promocoes" },
+    { label: "Como funciona", href: "#como-funciona" },
+    { label: "Produtos", href: "#produtos" },
     { label: "Dúvidas", href: "#duvidas" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-primary/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <motion.a
+            href="#"
+            className="flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="flex items-center">
-              <svg
-                viewBox="0 0 40 40"
-                className="w-8 h-8 text-primary-foreground"
-                fill="currentColor"
-              >
-                <path d="M20 5L5 15v20h30V15L20 5zm0 5l10 7v13H10V17l10-7z" />
-              </svg>
-              <span className="text-primary-foreground font-bold text-xl ml-1">
-                arte<br />arena
-              </span>
+              <div className="w-10 h-10 bg-primary-foreground rounded-lg flex items-center justify-center">
+                <svg
+                  viewBox="0 0 40 40"
+                  className="w-6 h-6 text-primary"
+                  fill="currentColor"
+                >
+                  <path d="M20 5L5 15v20h30V15L20 5zm0 5l10 7v13H10V17l10-7z" />
+                </svg>
+              </div>
+              <div className="ml-2">
+                <span className="text-primary-foreground font-bold text-lg leading-none block">
+                  arte
+                </span>
+                <span className="text-primary-foreground font-bold text-lg leading-none block">
+                  arena
+                </span>
+              </div>
             </div>
-          </a>
+          </motion.a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
+            {navItems.map((item, index) => (
+              <motion.a
                 key={item.href}
                 href={item.href}
-                className="text-primary-foreground/90 hover:text-primary-foreground text-sm font-medium transition-colors"
+                className="text-primary-foreground/90 hover:text-primary-foreground text-sm font-medium transition-colors relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
                 {item.label}
-              </a>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+              </motion.a>
             ))}
           </nav>
 
           {/* CTA & Social */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
-              variant="cta"
-              size="sm"
-              className="font-semibold"
-              asChild
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              <a href="#contato">Fale conosco!</a>
-            </Button>
+              <Button
+                variant="cta"
+                size="lg"
+                className="font-bold shadow-glow-accent"
+                asChild
+              >
+                <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Fale Conosco
+                </a>
+              </Button>
+            </motion.div>
             <div className="flex items-center gap-3 text-primary-foreground">
-              <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://wa.me/5511934881548"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
                 <Phone className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://instagram.com/artearena"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -75,29 +127,39 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-primary border-t border-primary-foreground/20 py-4">
-            <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-primary-foreground/90 hover:text-primary-foreground text-sm font-medium px-4 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="px-4 pt-4 border-t border-primary-foreground/20">
-                <Button variant="cta" className="w-full" asChild>
-                  <a href="#contato">Fale conosco!</a>
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-primary border-t border-primary-foreground/20 overflow-hidden"
+            >
+              <nav className="flex flex-col gap-2 py-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 text-sm font-medium px-4 py-3 rounded-lg transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <div className="px-4 pt-4 border-t border-primary-foreground/20 mt-2">
+                  <Button variant="cta" className="w-full" asChild>
+                    <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Fale Conosco
+                    </a>
+                  </Button>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

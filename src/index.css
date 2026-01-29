@@ -2,101 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    /* Arte Arena Brand Colors */
+    /* Arte Arena Brand Colors - Vibrant & Converting */
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 240 10% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 240 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 240 10% 10%;
 
-    /* Primary - Roxo vibrante */
-    --primary: 271 81% 56%;
+    /* Primary - Roxo vibrante (mais saturado) */
+    --primary: 270 85% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Teal/Turquesa */
-    --secondary: 181 77% 38%;
+    /* Secondary - Teal forte */
+    --secondary: 175 85% 35%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent - Laranja */
-    --accent: 24 95% 53%;
+    /* Accent - Laranja vibrante (CTA) */
+    --accent: 25 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     /* Muted */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 45%;
 
     /* Carnival Colors */
-    --carnival-pink: 330 85% 60%;
-    --carnival-magenta: 322 75% 46%;
-    --carnival-yellow: 45 100% 50%;
-    --carnival-green: 142 76% 36%;
-    --carnival-teal: 181 77% 38%;
+    --carnival-pink: 335 85% 55%;
+    --carnival-magenta: 310 75% 45%;
+    --carnival-yellow: 45 100% 55%;
+    --carnival-green: 145 70% 40%;
+    --carnival-teal: 175 85% 35%;
     
     /* Functional */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 271 81% 56%;
+    --border: 240 5% 90%;
+    --input: 240 5% 90%;
+    --ring: 270 85% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 271 81% 56%;
+    --sidebar-primary: 270 85% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 271 81% 96%;
-    --sidebar-accent-foreground: 271 81% 30%;
+    --sidebar-accent: 270 85% 96%;
+    --sidebar-accent-foreground: 270 85% 30%;
     --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 271 81% 56%;
+    --sidebar-ring: 270 85% 50%;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 85% 50%) 0%, hsl(310 75% 45%) 50%, hsl(335 85% 55%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(25 100% 50%) 0%, hsl(35 100% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(270 85% 50% / 0.95) 0%, hsl(310 75% 45% / 0.9) 100%);
   }
 
   .dark {
-    --background: 0 0% 5%;
+    --background: 240 10% 5%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 8%;
+    --card: 240 10% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
+    --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 271 81% 56%;
+    --primary: 270 85% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 181 77% 38%;
+    --secondary: 175 85% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 24 95% 53%;
+    --accent: 25 100% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 271 81% 56%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 270 85% 60%;
 
-    --sidebar-background: 0 0% 8%;
+    --sidebar-background: 240 10% 8%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 271 81% 56%;
+    --sidebar-primary: 270 85% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 271 81% 20%;
+    --sidebar-accent: 270 85% 20%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 271 81% 56%;
+    --sidebar-border: 240 5% 20%;
+    --sidebar-ring: 270 85% 60%;
   }
 }
 
@@ -105,84 +110,111 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground font-outfit antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
-  /* Wave Dividers */
-  .wave-divider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--carnival-magenta)) 50%, hsl(var(--carnival-pink)) 100%);
   }
 
-  .wave-divider::before {
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(45 100% 55%) 100%);
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.95) 0%, hsl(var(--carnival-magenta) / 0.9) 100%);
+  }
+
+  .bg-gradient-teal {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(175 85% 28%) 100%);
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-black/10;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-carnival-pink to-accent;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.5);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* Pulse ring animation */
+  .pulse-ring {
+    @apply relative;
+  }
+
+  .pulse-ring::before {
     content: "";
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--carnival-pink)) 25%,
-      hsl(var(--secondary)) 50%,
-      hsl(var(--carnival-pink)) 75%,
-      hsl(var(--primary)) 100%
-    );
-    clip-path: polygon(
-      0 60%,
-      20% 40%,
-      40% 60%,
-      60% 40%,
-      80% 60%,
-      100% 40%,
-      100% 100%,
-      0 100%
-    );
+    @apply absolute inset-0 rounded-full animate-ping bg-accent/30;
   }
 
-  /* Carnival gradient backgrounds */
-  .bg-carnival-wave {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--carnival-magenta)) 50%,
-      hsl(var(--carnival-pink)) 100%
-    );
+  /* Animated border */
+  .animated-border {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--carnival-pink)), hsl(var(--accent)), hsl(var(--primary)));
+    background-size: 300% 100%;
+    animation: gradient-shift 3s ease infinite;
   }
 
-  .bg-teal-gradient {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--secondary)) 0%,
-      hsl(181 77% 32%) 100%
-    );
-  }
-
-  /* Decorative lines */
-  .line-decoration {
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 2px,
-      hsl(var(--carnival-pink) / 0.2) 2px,
-      hsl(var(--carnival-pink) / 0.2) 4px
-    );
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 }
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
   .text-shadow-lg {
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 30px hsl(var(--accent) / 0.6);
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary/70;
   }
 }
