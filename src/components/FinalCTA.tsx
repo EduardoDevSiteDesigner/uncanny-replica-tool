@@ -75,9 +75,9 @@ const FinalCTA = () => {
             <motion.img
               src={abadasCollection}
               alt="Coleção de Abadás"
-              className="w-full max-w-lg mx-auto drop-shadow-2xl"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="w-full max-w-2xl mx-auto drop-shadow-2xl"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
         </div>
