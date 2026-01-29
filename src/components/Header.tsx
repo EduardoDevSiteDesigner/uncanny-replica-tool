@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoArteArena from "@/assets/logo-arte-arena.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,11 +40,9 @@ const Header = () => {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <img
-              src={logoArteArena}
-              alt="Arte Arena"
-              className="h-12 w-auto"
-            />
+            <span className="text-2xl font-bold text-primary-foreground">
+              Arte Arena
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
