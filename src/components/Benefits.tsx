@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2, Clock, Palette, Truck } from "lucide-react";
+import abadaDetail from "@/assets/abada-detail.png";
 
 const benefitsLeft = [
   {
@@ -112,6 +113,20 @@ const Benefits = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Abadá Detail Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16 flex justify-center"
+        >
+          <img
+            src={abadaDetail}
+            alt="Detalhes do Abadá - Gola redonda, viés na gola e mangas, opções com e sem mangas, feito em poliéster esportivo dryfit"
+            className="max-w-full md:max-w-4xl"
+          />
+        </motion.div>
       </div>
     </section>
   );
