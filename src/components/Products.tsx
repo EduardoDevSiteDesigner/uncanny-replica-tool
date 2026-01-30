@@ -70,58 +70,61 @@ const Products = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             Nossos Abadás
           </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 text-xl max-w-3xl mx-auto">
             Escolha o modelo perfeito para seu bloco. Todos com qualidade premium e personalização total.
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Product Selector */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4 mb-8"
+            className="space-y-6 mb-12"
           >
-            {products.map((product) => (
-              <div
+            {products.map((product, index) => (
+              <motion.div
                 key={product.id}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 onClick={() => setSelectedProduct(product)}
-                className={`relative cursor-pointer rounded-2xl p-4 transition-all duration-300 ${
+                className={`relative cursor-pointer rounded-3xl p-6 transition-all duration-300 ${
                   selectedProduct.id === product.id
-                    ? "bg-white/20 border-2 border-white/50"
+                    ? "bg-white/20 border-2 border-white/50 scale-[1.02]"
                     : "bg-white/5 border-2 border-transparent hover:bg-white/10"
                 }`}
               >
                 {product.popular && (
-                  <span className="absolute -top-2 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="absolute -top-3 right-6 bg-accent text-accent-foreground text-sm font-bold px-4 py-1.5 rounded-full">
                     + Vendido
                   </span>
                 )}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-20 h-20 object-contain rounded-lg bg-white/10 p-2"
+                    className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-2xl bg-white/10 p-3"
                   />
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-primary-foreground">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary-foreground">
                       {product.name}
                     </h3>
-                    <p className="text-primary-foreground/70 text-sm">
+                    <p className="text-primary-foreground/70 text-base md:text-lg mt-1">
                       {product.description}
                     </p>
                   </div>
                   <ChevronRight
-                    className={`w-5 h-5 text-primary-foreground/50 transition-transform ${
+                    className={`w-8 h-8 text-primary-foreground/50 transition-transform ${
                       selectedProduct.id === product.id ? "rotate-90" : ""
                     }`}
                   />
@@ -131,22 +134,22 @@ const Products = () => {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
-                    className="mt-4 pt-4 border-t border-white/20"
+                    className="mt-6 pt-6 border-t border-white/20"
                   >
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3">
                       {product.features.map((feature, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center gap-1 bg-white/10 text-primary-foreground text-xs px-3 py-1 rounded-full"
+                          className="inline-flex items-center gap-2 bg-white/10 text-primary-foreground text-sm px-4 py-2 rounded-full"
                         >
-                          <Check className="w-3 h-3" />
+                          <Check className="w-4 h-4" />
                           {feature}
                         </span>
                       ))}
                     </div>
                   </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
