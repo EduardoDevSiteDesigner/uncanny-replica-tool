@@ -8,7 +8,6 @@ const Hero = () => {
   const stats = [
     { icon: Users, value: "10.000+", label: "Clientes satisfeitos" },
     { icon: Star, value: "5.0", label: "Avaliação média" },
-    { icon: Clock, value: "15+ dias", label: "Prazo de entrega" },
   ];
 
   return (
@@ -49,10 +48,10 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-primary-foreground mb-6 leading-tight"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.3, duration: 1, type: "spring" }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground mb-8 leading-tight"
             >
               Os Melhores{" "}
               <span className="text-accent text-shadow-glow">Abadás</span>
@@ -103,21 +102,24 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-2 gap-6 max-w-md mx-auto lg:mx-0"
             >
               {stats.map((stat, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="glass rounded-xl p-4 text-center"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                  className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform"
                 >
-                  <stat.icon className="w-5 h-5 text-primary-foreground mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-primary-foreground">
+                  <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
+                  <p className="text-3xl md:text-4xl font-black text-primary-foreground">
                     {stat.value}
                   </p>
-                  <p className="text-primary-foreground/70 text-xs">
+                  <p className="text-primary-foreground/80 text-sm mt-1">
                     {stat.label}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </motion.div>
@@ -133,12 +135,12 @@ const Hero = () => {
               <motion.img
                 src={carnivalBadge}
                 alt="Arte Arena Carnaval 2026"
-                className="w-80 lg:w-[450px] drop-shadow-2xl"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-96 lg:w-[550px] drop-shadow-2xl"
+                animate={{ y: [0, -20, 0], rotate: [0, 2, -2, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full -z-10 scale-75" />
+              <div className="absolute inset-0 bg-accent/30 blur-3xl rounded-full -z-10 scale-90" />
             </div>
           </motion.div>
         </div>
