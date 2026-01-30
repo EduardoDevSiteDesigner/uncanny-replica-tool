@@ -84,7 +84,7 @@ const SocialProof = () => {
             delay: 0.4 + (rowIndex * 0.15) + (index * 0.08),
             type: "spring"
           }}
-          className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white overflow-hidden shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center p-3"
+          className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full bg-white overflow-hidden shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center p-4"
         >
           <img
             src={partner.image}
@@ -106,11 +106,11 @@ const SocialProof = () => {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             O que nossos{" "}
             <span className="text-gradient">clientes dizem</span>
           </h2>
-          <p className="text-muted-foreground text-xl">
+          <p className="text-muted-foreground text-xl md:text-2xl">
             Milhares de blocos confiam na Arte Arena
           </p>
         </motion.div>

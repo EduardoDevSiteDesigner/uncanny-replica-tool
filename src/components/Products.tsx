@@ -41,7 +41,7 @@ const specs = [
     details: ["Alta elasticidade", "Durabilidade", "Conforto", "Extremamente versátil"]
   },
   { label: "Gênero", value: "Unissex" },
-  { label: "Personalização", value: "Sublimação 100% frente e verso" },
+  { label: "Personalização", value: "Sublimação frente e verso" },
   { label: "Cores", value: "Ilimitadas" },
 ];
 
