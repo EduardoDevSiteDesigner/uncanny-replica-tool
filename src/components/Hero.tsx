@@ -6,7 +6,7 @@ import carnivalBadge from "@/assets/carnaval-2026-badge.png";
 
 const Hero = () => {
   const stats = [
-    { icon: Users, value: "10.000+", label: "Clientes satisfeitos" },
+    { icon: Users, value: "50.000+", label: "Clientes satisfeitos" },
     { icon: Star, value: "5.0", label: "Avaliação média" },
   ];
 
