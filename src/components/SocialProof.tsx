@@ -3,6 +3,16 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
 
+import partnerPetrobras from "@/assets/partner-petrobras.png";
+import partnerAdidas from "@/assets/partner-adidas.png";
+import partnerPuma from "@/assets/partner-puma.png";
+import partnerAmbev from "@/assets/partner-ambev.png";
+import partnerSpfc from "@/assets/partner-spfc.png";
+import partnerCorinthians from "@/assets/partner-corinthians.png";
+import partnerPalmeiras from "@/assets/partner-palmeiras.png";
+import partnerNubank from "@/assets/partner-nubank.png";
+import partnerHeineken from "@/assets/partner-heineken.png";
+
 const testimonials = [
   {
     name: "Carlos Silva",
@@ -28,8 +38,15 @@ const testimonials = [
 ];
 
 const partners = [
-  "Amazon", "Globo", "Petrobras", "Heineken", "Adidas", 
-  "Tommy Hilfiger", "McDonald's", "Ambev", "Shell", "Nubank"
+  { image: partnerPetrobras, alt: "Petrobras" },
+  { image: partnerAdidas, alt: "Adidas" },
+  { image: partnerPuma, alt: "Puma" },
+  { image: partnerAmbev, alt: "Ambev" },
+  { image: partnerSpfc, alt: "São Paulo FC" },
+  { image: partnerCorinthians, alt: "Corinthians" },
+  { image: partnerPalmeiras, alt: "Palmeiras" },
+  { image: partnerNubank, alt: "Nubank" },
+  { image: partnerHeineken, alt: "Heineken" },
 ];
 
 const SocialProof = () => {
@@ -103,16 +120,20 @@ const SocialProof = () => {
           <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">
             Empresas que confiam na Arte Arena
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+          <div className="flex flex-wrap justify-center items-center gap-6">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-                className="text-lg font-bold text-muted-foreground hover:text-foreground transition-colors cursor-default"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow flex items-center justify-center p-2"
               >
-                {partner}
+                <img
+                  src={partner.image}
+                  alt={partner.alt}
+                  className="w-full h-full object-contain"
+                />
               </motion.div>
             ))}
           </div>
