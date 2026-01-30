@@ -84,7 +84,7 @@ const SocialProof = () => {
             delay: 0.4 + (rowIndex * 0.15) + (index * 0.08),
             type: "spring"
           }}
-          className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full bg-white overflow-hidden shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center p-5"
+          className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full bg-white overflow-hidden shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center p-2 md:p-5"
         >
           <img
             src={partner.image}
