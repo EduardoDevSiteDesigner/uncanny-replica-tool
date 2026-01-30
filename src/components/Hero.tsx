@@ -110,7 +110,7 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
-                  className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform"
+                  className="glass rounded-2xl p-8 text-center hover:scale-105 transition-transform min-w-[160px]"
                 >
                   <stat.icon className="w-10 h-10 text-accent mx-auto mb-3" />
                   <p className="text-4xl md:text-5xl font-black text-primary-foreground">
