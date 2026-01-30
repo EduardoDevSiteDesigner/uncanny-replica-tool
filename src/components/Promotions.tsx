@@ -60,14 +60,14 @@ const Promotions = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-6 py-3 mb-6">
-            <Sparkles className="w-5 h-5" />
-            <span className="text-base font-bold uppercase">Promoção Exclusiva Carnaval 2026</span>
+            <Sparkles className="w-6 h-6" />
+            <span className="text-lg md:text-xl font-bold uppercase">Promoção Exclusiva Carnaval 2026</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 uppercase">
             Compre mais,{" "}
             <span className="text-gradient">ganhe mais!</span>
           </h2>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto">
             Quanto maior seu pedido, maior o brinde. Aproveite estas ofertas por tempo limitado!
           </p>
         </motion.div>
@@ -111,11 +111,11 @@ const Promotions = () => {
                 {/* Content */}
                 <div className={`p-8 text-center ${promo.special || promo.highlight ? "text-primary-foreground" : ""}`}>
                   <div className="flex items-center justify-center gap-2 mb-3">
-                    <span className={`text-xl font-bold uppercase ${promo.special || promo.highlight ? "text-primary-foreground" : "text-accent"}`}>
+                    <span className={`text-2xl md:text-3xl font-bold uppercase ${promo.special || promo.highlight ? "text-primary-foreground" : "text-accent"}`}>
                       GANHE {promo.reward}
                     </span>
                   </div>
-                  <p className={`text-base uppercase ${promo.special || promo.highlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  <p className={`text-lg md:text-xl uppercase ${promo.special || promo.highlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     Comprando {promo.quantity}+ abadás
                   </p>
 

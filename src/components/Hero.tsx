@@ -51,7 +51,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.3, duration: 1, type: "spring" }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground mb-8 leading-tight"
+              className="text-6xl md:text-7xl lg:text-8xl font-black text-primary-foreground mb-8 leading-tight"
             >
               Os Melhores{" "}
               <span className="text-accent text-shadow-glow">Abadás</span>
@@ -63,7 +63,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-lg mx-auto lg:mx-0"
+              className="text-primary-foreground/90 text-xl md:text-2xl mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Qualidade premium, entrega rápida e preços imbatíveis.
               Faça seu bloco brilhar neste Carnaval!
@@ -112,11 +112,11 @@ const Hero = () => {
                   transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
                   className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform"
                 >
-                  <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-                  <p className="text-3xl md:text-4xl font-black text-primary-foreground">
+                  <stat.icon className="w-10 h-10 text-accent mx-auto mb-3" />
+                  <p className="text-4xl md:text-5xl font-black text-primary-foreground">
                     {stat.value}
                   </p>
-                  <p className="text-primary-foreground/80 text-sm mt-1">
+                  <p className="text-primary-foreground/80 text-base mt-1">
                     {stat.label}
                   </p>
                 </motion.div>
