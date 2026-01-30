@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import logoArteArena from "@/assets/logo-arte-arena-branco.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,23 +25,11 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <svg
-                  viewBox="0 0 40 40"
-                  className="w-7 h-7 text-primary-foreground"
-                  fill="currentColor"
-                >
-                  <path d="M20 5L5 15v20h30V15L20 5zm0 5l10 7v13H10V17l10-7z" />
-                </svg>
-              </div>
-              <div>
-                <span className="font-bold text-2xl text-background block leading-tight">
-                  arte arena
-                </span>
-                <span className="text-background/60 text-sm">
-                  Sua paixão, nossa bandeira!
-                </span>
-              </div>
+              <img
+                src={logoArteArena}
+                alt="Arte Arena"
+                className="h-14 w-auto"
+              />
             </div>
             <p className="text-background/70 max-w-md">
               Empresa líder em produtos personalizados no Brasil transformando ideias em realidade para blocos, empresas e eventos.
